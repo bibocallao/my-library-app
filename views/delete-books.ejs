@@ -1,0 +1,30 @@
+<%- include('partials/header', { title: 'Delete Books' }) %>
+
+<h1>Delete Books</h1>
+<p>Click Delete to remove a book. This cannot be undone.</p>
+
+<% if (books.length === 0) { %>
+  <p>No books to delete. <a href="/books/new">Add one.</a></p>
+<% } else { %>
+  <table class="table table-bordered bg-white">
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Action</th>
+    </tr>
+    <% books.forEach(function (b) { %>
+      <tr>
+        <td><%= b.title %></td>
+        <td><%= b.author %></td>
+        <td>
+          <form method="post" action="/books/<%= b.id %>/delete"
+                onsubmit="return confirm('Delete this book?');">
+            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+<% } %>
+
+<%- include('partials/footer') %>

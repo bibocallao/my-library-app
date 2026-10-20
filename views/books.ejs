@@ -1,0 +1,18 @@
+<%- include('partials/header', { title: 'Books' }) %>
+
+<h1>Books</h1>
+
+<table class="table table-bordered bg-white">
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+  </tr>
+  <% books.forEach(function (b) { %>
+    <tr>
+      <td><%= b.title %></td>
+      <td><%= b.author %></td>
+    </tr>
+  <% }) %>
+</table>
+
+<%- include('partials/footer') %>

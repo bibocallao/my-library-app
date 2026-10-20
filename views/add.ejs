@@ -1,0 +1,20 @@
+<%- include('partials/header', { title: 'Add Book' }) %>
+
+<h1>Add Book</h1>
+
+<form method="post" action="/books">
+  <p>
+    <label>Title<br>
+      <input type="text" name="title" required>
+    </label>
+  </p>
+  <p>
+    <label>Author<br>
+      <input type="text" name="author" required>
+    </label>
+  </p>
+  <button type="submit" class="btn btn-success">Save Book</button>
+  <a href="/books" class="btn btn-light">Cancel</a>
+</form>
+
+<%- include('partials/footer') %>

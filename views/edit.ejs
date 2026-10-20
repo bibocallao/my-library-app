@@ -1,0 +1,22 @@
+<%- include('partials/header', { title: 'Edit Book' }) %>
+
+<h1 class="h3 mb-3">Edit Book</h1>
+
+<div class="card shadow-sm" style="max-width: 520px;">
+  <div class="card-body">
+    <form method="post" action="/books/<%= book.id %>/update">
+      <div class="mb-3">
+        <label class="form-label" for="title">Title</label>
+        <input class="form-control" type="text" id="title" name="title" value="<%= book.title %>" required>
+      </div>
+      <div class="mb-4">
+        <label class="form-label" for="author">Author</label>
+        <input class="form-control" type="text" id="author" name="author" value="<%= book.author %>" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Update Book</button>
+      <a href="/edit-books" class="btn btn-outline-secondary">Cancel</a>
+    </form>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
